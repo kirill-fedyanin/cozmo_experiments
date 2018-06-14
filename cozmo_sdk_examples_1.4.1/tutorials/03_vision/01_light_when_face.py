@@ -31,7 +31,8 @@ def light_when_face(robot: cozmo.robot.Robot):
 
     # Move lift down and tilt the head up
     robot.move_lift(-3)
-    robot.set_head_angle(cozmo.robot.MAX_HEAD_ANGLE).wait_for_completed()
+    # robot.set_head_angle(cozmo.robot.MAX_HEAD_ANGLE).wait_for_completed()
+    robot.set_head_angle(cozmo.util.degrees(0)).wait_for_completed()
 
     face = None
 
