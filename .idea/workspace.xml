@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e01e469a-b33a-4486-8ac1-71e5a55f94f3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/own/gogo.py" beforeDir="false" afterPath="$PROJECT_DIR$/own/gogo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="gogo.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gogo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/own/gogo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="707">
+              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -25,64 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="image_open.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/own/image_open.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="04_exposure.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/03_vision/04_exposure.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="120" column="42" lean-forward="true" selection-start-line="120" selection-start-column="42" selection-end-line="120" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="01_cube_blinker_sync.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/05_async_python/01_cube_blinker_sync.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1700" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="02_cube_blinker.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/05_async_python/02_cube_blinker.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2280" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="color_finder.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/apps/color_finder.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5597">
-              <caret line="202" column="8" selection-start-line="202" selection-start-column="8" selection-end-line="202" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="01_light_when_face.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/03_vision/01_light_when_face.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1595">
-              <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
-              <folding>
-                <element signature="e#856#870#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="01_hello_world.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/01_basics/01_hello_world.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+            <state relative-caret-position="87">
+              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -99,8 +46,9 @@
         <option value="$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/01_basics/05_motors.py" />
         <option value="$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/01_basics/06_sing_scales.py" />
         <option value="$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/03_vision/01_light_when_face.py" />
-        <option value="$PROJECT_DIR$/own/gogo.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/own/image_open.py" />
+        <option value="$PROJECT_DIR$/own/gogo.py" />
       </list>
     </option>
   </component>
@@ -129,6 +77,11 @@
               <item name="cozmo_brain" type="462c0819:PsiDirectoryNode" />
               <item name="cozmo_sdk_examples_1.4.1" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cozmo_brain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cozmo_brain" type="462c0819:PsiDirectoryNode" />
+              <item name="own" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -138,6 +91,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../cv_test" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/own" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -355,30 +313,20 @@
     <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/apps/quiz_questions.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/01_basics/01_hello_world.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/03_vision/01_light_when_face.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1595">
-          <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
-          <folding>
-            <element signature="e#856#870#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/apps/desk_security_guard.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/apps/color_finder.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5597">
-          <caret line="202" column="8" selection-start-line="202" selection-start-column="8" selection-end-line="202" selection-end-column="8" />
+        <state relative-caret-position="58">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/03_vision/04_exposure.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="120" column="42" lean-forward="true" selection-start-line="120" selection-start-column="42" selection-end-line="120" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -392,27 +340,44 @@
         <state relative-caret-position="-2280" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/03_vision/04_exposure.py">
+    <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/apps/color_finder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="120" column="42" lean-forward="true" selection-start-line="120" selection-start-column="42" selection-end-line="120" selection-end-column="42" />
+        <state relative-caret-position="29">
+          <caret line="202" column="8" selection-start-line="202" selection-start-column="8" selection-end-line="202" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/03_vision/01_light_when_face.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
+          <folding>
+            <element signature="e#856#870#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/01_basics/01_hello_world.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/own/image_open.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/own/gogo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="707">
+          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>
