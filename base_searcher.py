@@ -2,9 +2,9 @@ import cozmo
 from cozmo.util import degrees, distance_mm, speed_mmps
 
 import numpy as np
-from algo_decider import AlgoDecider
-from neural_decider import NeuralDecider
-from imager import Imager
+from lib.algo_decider import AlgoDecider
+from lib.neural_decider import NeuralDecider
+from lib.imager import Imager
 
 
 class Runner:

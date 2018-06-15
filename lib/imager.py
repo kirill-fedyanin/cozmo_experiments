@@ -6,6 +6,7 @@ import numpy as np
 import cozmo
 from cozmo.util import degrees, distance_mm, speed_mmps
 
+
 class Imager:
     def __init__(self, robot):
         robot.camera.image_stream_enabled = True

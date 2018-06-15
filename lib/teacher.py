@@ -75,8 +75,5 @@ class Teacher:
             pickle.dump(cgnet, f)
 
 
-
-
-
 if __name__ == '__main__':
     Teacher().go()
