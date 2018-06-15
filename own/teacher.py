@@ -1,8 +1,8 @@
+import pickle
 
-from neupy import algorithms, layers, plots
+from neupy import algorithms, layers, plots, environment, storage
 from sklearn import datasets, preprocessing
 from sklearn.model_selection import train_test_split
-from neupy import environment
 from neupy.estimators import rmsle
 
 import numpy as np
@@ -63,6 +63,12 @@ class Teacher:
         y_predict = cgnet.predict(x_test).round(1)
         error = rmsle(y_test, y_predict)
         print(error)
+
+        with open('net.pickle', 'wb') as f:
+            pickle.dump(cgnet, f)
+
+
+
 
 
 if __name__ == '__main__':

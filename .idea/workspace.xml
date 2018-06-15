@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e01e469a-b33a-4486-8ac1-71e5a55f94f3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/own/action_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/own/action_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/own/neural_decider.py" beforeDir="false" afterPath="$PROJECT_DIR$/own/neural_decider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/own/teacher.py" beforeDir="false" afterPath="$PROJECT_DIR$/own/teacher.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,13 +15,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="teacher.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="teacher.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/own/teacher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="504">
+              <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
               <folding>
-                <element signature="e#1#44#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="neural_decider.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/own/neural_decider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -30,15 +44,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="116">
               <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="algo_decider.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/own/algo_decider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -77,6 +82,7 @@
         <option value="$PROJECT_DIR$/own/action_log.txt" />
         <option value="$PROJECT_DIR$/own/boston_teacher.py" />
         <option value="$PROJECT_DIR$/own/teacher.py" />
+        <option value="$PROJECT_DIR$/own/neural_decider.py" />
       </list>
     </option>
   </component>
@@ -439,12 +445,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/own/algo_decider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/own/net.pickle">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/own/boston_teacher.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -455,10 +457,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/own/teacher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="504">
+          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
           <folding>
-            <element signature="e#1#44#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/own/algo_decider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/own/neural_decider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
