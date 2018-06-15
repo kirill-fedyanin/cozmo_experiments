@@ -43,13 +43,20 @@ class Teacher:
         )
 
         print(x_train[0])
+        connections = [
+            layers.Input(100),
+            layers.Linear(200),
+            layers.Sigmoid(50),
+            layers.Sigmoid(5),
+        ]
+        # connections = [
+        #     layers.Input(100),
+        #     layers.Linear(200),
+        #     layers.Sigmoid(5),
+        # ]
 
         cgnet = algorithms.ConjugateGradient(
-            connection=[
-                layers.Input(100),
-                layers.Sigmoid(50),
-                layers.Sigmoid(5),
-            ],
+            connection=connections,
             search_method='golden',
             show_epoch=25,
             verbose=True,

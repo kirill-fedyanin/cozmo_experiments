@@ -38,7 +38,8 @@ class Runner:
                 raise RuntimeError("Unknow action")
 
     def _forward(self):
-        self.robot.drive_straight(distance_mm(30), speed_mmps(150)).wait_for_completed()
+        self.robot.drive_straight(distance_mm(30), speed_mmps(150), should_play_anim=False)\
+            .wait_for_completed()
 
     def _left(self):
         self.robot.turn_in_place(degrees(self.degrees)).wait_for_completed()
@@ -66,7 +67,8 @@ class Logger:
 
 
 def cozmo_program(robot: cozmo.robot.Robot):
-    generate_training = True
+    generate_training = False
+    # generate_training = True
     if generate_training:
         decider = AlgoDecider()
         logger = Logger("action_data.txt")

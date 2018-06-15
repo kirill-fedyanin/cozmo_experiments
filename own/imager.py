@@ -3,11 +3,14 @@ from matplotlib import pyplot as plt
 from PIL import Image
 import numpy as np
 
+import cozmo
+from cozmo.util import degrees, distance_mm, speed_mmps
 
 class Imager:
     def __init__(self, robot):
         robot.camera.image_stream_enabled = True
         robot.camera.color_image_enabled = True
+        robot.set_head_angle(degrees(0)).wait_for_completed()
         self.robot = robot
         time.sleep(0.3)
 
