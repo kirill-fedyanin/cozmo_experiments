@@ -48,51 +48,22 @@ class Imager:
         return reds
 
     def show(self, image, block=True):
-        # image.show()
-        # ImageTk.PhotoImage(image)
-        # time.sleep(1)
         plt.imshow(image)
         plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
         plt.show(block=block)
 
-# class Runner:
-#     def __init__(self, decider, robot, imager):
-#         self.decider = decider
-#
-#     def guide(self):
-#         pass
-
-class MarkerGuide:
+class Runner:
     degrees = 15
-    threshold = 65
-    sum_threshold = 1500
 
-    def __init__(self, robot, imager=None):
+    def __init__(self, decider, robot, imager):
+        self.decider = decider
         self.robot = robot
         self.imager = imager
-
-    def decide(self, reds):
-        if np.amax(reds) < self.threshold:
-                return 1
-        else:
-            columns = reds.sum(axis=0)
-            max_column = np.argmax(columns)
-            print("Max column", max_column)
-            print("Sum", columns.sum())
-
-            if columns.sum() > self.sum_threshold:
-                return 0
-            elif max_column < 2:
-                return 2
-            elif max_column > 7:
-                return 3
-            else:
-                return 4
 
     def guide(self):
         while True:
             reds = self.imager.get_red_array()
-            action = self.decide(reds)
+            action = self.decider.decide(reds)
             if action == 0:
                 self._finish()
                 break
@@ -106,12 +77,6 @@ class MarkerGuide:
                 self._forward()
             else:
                 raise RuntimeError("Unknow action")
-
-
-
-
-        # print(reds.sum(axis=0))
-        # print(np.amax(reds))
 
     def _forward(self):
         self.robot.drive_straight(distance_mm(100), speed_mmps(100)).wait_for_completed()
@@ -127,15 +92,38 @@ class MarkerGuide:
         self.robot.say_text("Based!").wait_for_completed()
 
 
+class AlgoDecider:
+    threshold = 65
+    sum_threshold = 1500
 
+    # def __init__(self, robot, imager=None):
+    #     self.robot = robot
+    #     self.imager = imager
 
+    def decide(self, reds):
+        if np.amax(reds) < self.threshold:
+            return 1
+        else:
+            columns = reds.sum(axis=0)
+            max_column = np.argmax(columns)
+            print("Max column", max_column)
+            print("Sum", columns.sum())
+
+            if columns.sum() > self.sum_threshold:
+                return 0
+            elif max_column < 2:
+                return 2
+            elif max_column > 7:
+                return 3
+            else:
+                return 4
 
 
 
 def cozmo_program(robot: cozmo.robot.Robot):
     imager = Imager(robot)
-    guider = MarkerGuide(robot, imager)
-    guider.guide()
+    runner = Runner(AlgoDecider(), robot, imager)
+    runner.guide()
 
 
 cozmo.run_program(cozmo_program)
