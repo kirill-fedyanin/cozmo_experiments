@@ -13,6 +13,20 @@ class CozmoTrainer:
         pass
 
 
+class Logger:
+    def __init__(self):
+        self.file = open("action_log.txt", "a")
+
+    def log(self, input_, output_):
+        print(input_)
+        print(output_)
+        input_ = np.resize(input_, (1, 100))
+        print(' '.join(str(el) for el in input_))
+        self.file.write(' '.join(str(el) for el in input_[0]))
+        self.file.write("\n")
+        self.file.write(str(output_))
+        self.file.write("\n")
+
 class Imager:
     def __init__(self, robot):
         robot.camera.image_stream_enabled = True
@@ -52,18 +66,21 @@ class Imager:
         plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
         plt.show(block=block)
 
+
 class Runner:
     degrees = 15
 
-    def __init__(self, decider, robot, imager):
-        self.decider = decider
+    def __init__(self, robot):
+        self.decider = AlgoDecider()
         self.robot = robot
-        self.imager = imager
+        self.imager = Imager(robot)
+        self.logger = Logger()
 
     def guide(self):
         while True:
             reds = self.imager.get_red_array()
             action = self.decider.decide(reds)
+            self.logger.log(reds, action)
             if action == 0:
                 self._finish()
                 break
@@ -89,7 +106,7 @@ class Runner:
 
     def _finish(self):
         self.robot.turn_in_place(degrees(180)).wait_for_completed()
-        self.robot.say_text("Based!").wait_for_completed()
+        # self.robot.say_text("Based!").wait_for_completed()
 
 
 class AlgoDecider:
@@ -121,8 +138,7 @@ class AlgoDecider:
 
 
 def cozmo_program(robot: cozmo.robot.Robot):
-    imager = Imager(robot)
-    runner = Runner(AlgoDecider(), robot, imager)
+    runner = Runner(robot)
     runner.guide()
 
 

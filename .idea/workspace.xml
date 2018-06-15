@@ -16,23 +16,21 @@
       <file leaf-file-name="gogo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/own/gogo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="783">
-              <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+            <state relative-caret-position="348">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
+                <element signature="e#259#1538#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="02_drive_and_turn.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/01_basics/02_drive_and_turn.py">
+      <file leaf-file-name="action_log.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/own/action_log.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
-              <folding>
-                <element signature="e#718#730#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="667">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -66,6 +64,7 @@
         <option value="$PROJECT_DIR$/own/image_open.py" />
         <option value="$PROJECT_DIR$/own/hello.py" />
         <option value="$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/01_basics/01_hello_world.py" />
+        <option value="$PROJECT_DIR$/own/action_log.txt" />
         <option value="$PROJECT_DIR$/own/gogo.py" />
       </list>
     </option>
@@ -94,19 +93,6 @@
               <item name="cozmo_brain" type="b2602c69:ProjectViewProjectNode" />
               <item name="cozmo_brain" type="462c0819:PsiDirectoryNode" />
               <item name="cozmo_sdk_examples_1.4.1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cozmo_brain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cozmo_brain" type="462c0819:PsiDirectoryNode" />
-              <item name="cozmo_sdk_examples_1.4.1" type="462c0819:PsiDirectoryNode" />
-              <item name="tutorials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cozmo_brain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cozmo_brain" type="462c0819:PsiDirectoryNode" />
-              <item name="cozmo_sdk_examples_1.4.1" type="462c0819:PsiDirectoryNode" />
-              <item name="tutorials" type="462c0819:PsiDirectoryNode" />
-              <item name="01_basics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cozmo_brain" type="b2602c69:ProjectViewProjectNode" />
@@ -197,6 +183,7 @@
           <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#259#1538#0" />
           </folding>
         </state>
       </provider>
@@ -422,12 +409,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/own/action_log.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/own/gogo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
+        <state relative-caret-position="348">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#259#1538#0" />
           </folding>
         </state>
       </provider>
