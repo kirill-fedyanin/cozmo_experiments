@@ -21,7 +21,6 @@ class Logger:
         print(input_)
         print(output_)
         input_ = np.resize(input_, (1, 100))
-        print(' '.join(str(el) for el in input_))
         self.file.write(' '.join(str(el) for el in input_[0]))
         self.file.write("\n")
         self.file.write(str(output_))
@@ -39,7 +38,7 @@ class Imager:
         raw = self.robot.world.latest_image.raw_image
         pixels = list(raw.getdata())
         new_pixels = []
-        # self.show(raw)
+        self.show(raw, False)
 
         # left red only
         for pixel in pixels:
@@ -110,23 +109,24 @@ class Runner:
 
 
 class AlgoDecider:
-    threshold = 65
-    sum_threshold = 1500
+    threshold = 75
+    sum_threshold = 800
 
     # def __init__(self, robot, imager=None):
     #     self.robot = robot
     #     self.imager = imager
 
     def decide(self, reds):
+        print("Max value", np.amax(reds))
         if np.amax(reds) < self.threshold:
             return 1
         else:
             columns = reds.sum(axis=0)
             max_column = np.argmax(columns)
             print("Max column", max_column)
-            print("Sum", columns.sum())
+            print("Max column value", np.amax(columns))
 
-            if columns.sum() > self.sum_threshold:
+            if np.amax(columns) > self.sum_threshold:
                 return 0
             elif max_column < 2:
                 return 2
