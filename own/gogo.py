@@ -1,4 +1,5 @@
 import cozmo
+from cozmo.util import degrees, distance_mm, speed_mmps
 import time
 import PIL
 from PIL import Image, ImageTk
@@ -10,6 +11,7 @@ import numpy as np
 class CozmoTrainer:
     def __init__(self):
         pass
+
 
 class Imager:
     def __init__(self, robot):
@@ -36,6 +38,15 @@ class Imager:
         modified = modified.resize((10, 10))
         return modified
 
+    def get_red_array(self):
+        red = self.get_red()
+        self.show(red.resize((320, 240)), False)
+        pixels = list(red.getdata())
+        reds = [pixel[0] for pixel in pixels]
+        reds = np.resize(np.array(reds), (10, 10))
+
+        return reds
+
     def show(self, image, block=True):
         # image.show()
         # ImageTk.PhotoImage(image)
@@ -44,20 +55,78 @@ class Imager:
         plt.xticks([]), plt.yticks([])  # to hide tick values on X and Y axis
         plt.show(block=block)
 
+# class Runner:
+#     def __init__(self, decider, robot, imager):
+#         self.decider = decider
+#
+#     def guide(self):
+#         pass
 
 class MarkerGuide:
+    degrees = 15
+    threshold = 65
+    sum_threshold = 1500
+
     def __init__(self, robot, imager=None):
         self.robot = robot
         self.imager = imager
 
-    def guide(self):
-        red = self.imager.get_red()
-        self.imager.show(red.resize((320, 240)))
-        pixels = list(red.getdata())
-        reds = [pixel[0] for pixel in pixels]
-        reds = np.resize(np.array(reds), (10, 10))
+    def decide(self, reds):
+        if np.amax(reds) < self.threshold:
+                return 1
+        else:
+            columns = reds.sum(axis=0)
+            max_column = np.argmax(columns)
+            print("Max column", max_column)
+            print("Sum", columns.sum())
 
-        print(reds)
+            if columns.sum() > self.sum_threshold:
+                return 0
+            elif max_column < 2:
+                return 2
+            elif max_column > 7:
+                return 3
+            else:
+                return 4
+
+    def guide(self):
+        while True:
+            reds = self.imager.get_red_array()
+            action = self.decide(reds)
+            if action == 0:
+                self._finish()
+                break
+            elif action == 1:
+                self._right()
+            elif action == 2:
+                self._left()
+            elif action == 3:
+                self._right()
+            elif action == 4:
+                self._forward()
+            else:
+                raise RuntimeError("Unknow action")
+
+
+
+
+        # print(reds.sum(axis=0))
+        # print(np.amax(reds))
+
+    def _forward(self):
+        self.robot.drive_straight(distance_mm(100), speed_mmps(100)).wait_for_completed()
+
+    def _left(self):
+        self.robot.turn_in_place(degrees(self.degrees)).wait_for_completed()
+
+    def _right(self):
+        self.robot.turn_in_place(degrees(-self.degrees)).wait_for_completed()
+
+    def _finish(self):
+        self.robot.turn_in_place(degrees(180)).wait_for_completed()
+        self.robot.say_text("Based!").wait_for_completed()
+
+
 
 
 
