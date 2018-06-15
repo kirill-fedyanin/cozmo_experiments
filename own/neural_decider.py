@@ -8,6 +8,7 @@ class NeuralDecider:
             self.cgnet = pickle.load(f)
 
     def decide(self, reds):
+        reds = np.resize(reds, (1, 100))
         return self._to_num(self.cgnet.predict(reds).round(1))
 
     def _to_num(self, array_):

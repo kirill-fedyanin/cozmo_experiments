@@ -7,6 +7,7 @@ from PIL import Image, ImageTk
 from matplotlib import pyplot as plt
 import numpy as np
 from algo_decider import AlgoDecider
+from neural_decider import NeuralDecider
 
 
 class CozmoTrainer:
@@ -15,8 +16,8 @@ class CozmoTrainer:
 
 
 class Logger:
-    def __init__(self):
-        self.file = open("action_log.txt", "a")
+    def __init__(self, filename):
+        self.file = open(filename, "a")
 
     def log(self, input_, output_):
         print(input_)
@@ -31,15 +32,14 @@ class Imager:
     def __init__(self, robot):
         robot.camera.image_stream_enabled = True
         robot.camera.color_image_enabled = True
-        robot.set_head_angle(cozmo.util.radians(0))
-        time.sleep(0.3)
         self.robot = robot
+        time.sleep(0.3)
 
     def get_red(self):
         raw = self.robot.world.latest_image.raw_image
         pixels = list(raw.getdata())
         new_pixels = []
-        self.show(raw, False)
+        # self.show(raw)
 
         # left red only
         for pixel in pixels:
@@ -54,7 +54,7 @@ class Imager:
 
     def get_red_array(self):
         red = self.get_red()
-        self.show(red.resize((320, 240)), False)
+        # self.show(red.resize((320, 240)), False)
         pixels = list(red.getdata())
         reds = [pixel[0] for pixel in pixels]
         reds = np.resize(np.array(reds), (10, 10))
@@ -68,35 +68,37 @@ class Imager:
 
 
 class Runner:
-    degrees = 15
+    degrees = 5
 
-    def __init__(self, robot):
-        self.decider = AlgoDecider()
+    def __init__(self, robot, decider, logger):
+        self.decider = decider
         self.robot = robot
         self.imager = Imager(robot)
-        self.logger = Logger()
+        self.logger = logger
 
     def guide(self):
-        while True:
-            reds = self.imager.get_red_array()
-            action = self.decider.decide(reds)
-            self.logger.log(reds, action)
-            if action == 0:
-                self._finish()
-                break
-            elif action == 1:
-                self._right()
-            elif action == 2:
-                self._left()
-            elif action == 3:
-                self._right()
-            elif action == 4:
-                self._forward()
-            else:
-                raise RuntimeError("Unknow action")
+        reds = self.imager.get_red_array()
+        action = self.decider.decide(reds)
+        # while True:
+        #     reds = self.imager.get_red_array()
+        #     action = self.decider.decide(reds)
+        #     self.logger.log(reds, action)
+        #     if action == 0:
+        #         self._finish()
+        #         break
+        #     elif action == 1:
+        #         self._right()
+        #     elif action == 2:
+        #         self._left()
+        #     elif action == 3:
+        #         self._right()
+        #     elif action == 4:
+        #         self._forward()
+        #     else:
+        #         raise RuntimeError("Unknow action")
 
     def _forward(self):
-        self.robot.drive_straight(distance_mm(100), speed_mmps(100)).wait_for_completed()
+        self.robot.drive_straight(distance_mm(30), speed_mmps(150)).wait_for_completed()
 
     def _left(self):
         self.robot.turn_in_place(degrees(self.degrees)).wait_for_completed()
@@ -110,7 +112,14 @@ class Runner:
 
 
 def cozmo_program(robot: cozmo.robot.Robot):
-    runner = Runner(robot)
+    generate_training = True
+    if generate_training:
+        decider = AlgoDecider()
+        logger = Logger("action_log.txt")
+    else:
+        decider = NeuralDecider()
+        logger = Logger("neuro_log.txt")
+    runner = Runner(robot, decider, logger)
     runner.guide()
 
 
