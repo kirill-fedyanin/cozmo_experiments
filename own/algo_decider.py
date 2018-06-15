@@ -2,12 +2,11 @@ import numpy as np
 
 
 class AlgoDecider:
-    threshold = 70
+    threshold = 90
     sum_threshold = 800
     max_size = 9
 
     def decide(self, reds):
-        print(reds)
         reds = self._extend_points(reds)
         print(reds)
         print("Max value", np.amax(reds))

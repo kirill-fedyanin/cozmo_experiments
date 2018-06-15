@@ -10,7 +10,7 @@ import numpy as np
 
 class Teacher:
     def __init__(self):
-        self.datafile = open("action_log.txt", "r")
+        self.datafile = open("action_data.txt", "r")
 
     def _prepare_target(self, target):
         return [self._flat(int(num)) for num in target]
