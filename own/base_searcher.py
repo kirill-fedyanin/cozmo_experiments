@@ -6,6 +6,7 @@ from PIL import Image, ImageTk
 
 from matplotlib import pyplot as plt
 import numpy as np
+from algo_decider import AlgoDecider
 
 
 class CozmoTrainer:
@@ -106,35 +107,6 @@ class Runner:
     def _finish(self):
         self.robot.turn_in_place(degrees(180)).wait_for_completed()
         # self.robot.say_text("Based!").wait_for_completed()
-
-
-class AlgoDecider:
-    threshold = 75
-    sum_threshold = 800
-
-    # def __init__(self, robot, imager=None):
-    #     self.robot = robot
-    #     self.imager = imager
-
-    def decide(self, reds):
-        print("Max value", np.amax(reds))
-        if np.amax(reds) < self.threshold:
-            return 1
-        else:
-            columns = reds.sum(axis=0)
-            max_column = np.argmax(columns)
-            print("Max column", max_column)
-            print("Max column value", np.amax(columns))
-
-            if np.amax(columns) > self.sum_threshold:
-                return 0
-            elif max_column < 2:
-                return 2
-            elif max_column > 7:
-                return 3
-            else:
-                return 4
-
 
 
 def cozmo_program(robot: cozmo.robot.Robot):
