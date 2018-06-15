@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e01e469a-b33a-4486-8ac1-71e5a55f94f3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/own/action_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/own/action_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/own/gogo.py" beforeDir="false" afterPath="$PROJECT_DIR$/own/base_searcher.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +13,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="base_searcher.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/own/base_searcher.py">
+      <file leaf-file-name="teacher.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/own/teacher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state relative-caret-position="319">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+              <folding>
+                <element signature="e#1#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="boston_teacher.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/own/boston_teacher.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -33,23 +43,9 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="action_log.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/own/action_log.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="test_output.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/own/test_output.txt">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="01_hello_world.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/01_basics/01_hello_world.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -58,6 +54,7 @@
     <findStrings>
       <find>set_lif</find>
       <find>raw</find>
+      <find>target_scaler</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -75,9 +72,11 @@
         <option value="$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/01_basics/01_hello_world.py" />
         <option value="$PROJECT_DIR$/own/gogo.py" />
         <option value="$PROJECT_DIR$/own/runner.py" />
-        <option value="$PROJECT_DIR$/own/action_log.txt" />
         <option value="$PROJECT_DIR$/own/algo_decider.py" />
         <option value="$PROJECT_DIR$/own/base_searcher.py" />
+        <option value="$PROJECT_DIR$/own/action_log.txt" />
+        <option value="$PROJECT_DIR$/own/boston_teacher.py" />
+        <option value="$PROJECT_DIR$/own/teacher.py" />
       </list>
     </option>
   </component>
@@ -193,6 +192,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
           <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -400,13 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/01_basics/01_hello_world.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/01_basics/02_drive_and_turn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -417,11 +412,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/own/base_searcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cozmo_sdk_examples_1.4.1/tutorials/01_basics/01_hello_world.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/own/test_output.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/own/action_log.txt">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6214">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/own/algo_decider.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -430,10 +446,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/own/base_searcher.py">
+    <entry file="file://$PROJECT_DIR$/own/boston_teacher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        <state relative-caret-position="116">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/own/teacher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#1#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
