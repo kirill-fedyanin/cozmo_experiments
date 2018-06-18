@@ -67,16 +67,18 @@ class Logger:
 
 
 def cozmo_program(robot: cozmo.robot.Robot):
-    generate_training = False
-    # generate_training = True
-    if generate_training:
-        decider = AlgoDecider()
-        logger = Logger("action_data.txt")
-    else:
-        decider = NeuralDecider()
-        logger = Logger("neuro_log.txt")
-    runner = Runner(robot, decider, logger)
-    runner.guide()
+    imager = Imager(robot)
+    print(imager.get_red_array())
+    # generate_training = False
+    # # generate_training = True
+    # if generate_training:
+    #     decider = AlgoDecider()
+    #     logger = Logger("action_data.txt")
+    # else:
+    #     decider = NeuralDecider()
+    #     logger = Logger("neuro_log.txt")
+    # runner = Runner(robot, decider, logger)
+    # runner.guide()
 
 
 cozmo.run_program(cozmo_program)

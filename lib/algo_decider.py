@@ -3,8 +3,8 @@ from copy import deepcopy
 
 
 class AlgoDecider:
-    threshold = 140
-    sum_threshold = 2850
+    threshold = 120
+    sum_threshold = 1350
     max_size = 9
 
     def decide(self, reds):
@@ -35,7 +35,9 @@ class AlgoDecider:
             j = index[1]
             extended[i, j] = (2 * element
                               + reds[self._bound(i - 1), j]
-                              + reds[self._bound(i + 1), j])
+                              + reds[self._bound(i + 1), j]
+                              + reds[i, self._bound(j - 1)]
+                              + reds[i, self._bound(j + 1)]) // 6
 
         return extended
 
