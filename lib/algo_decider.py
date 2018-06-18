@@ -4,7 +4,7 @@ from copy import deepcopy
 
 class AlgoDecider:
     threshold = 80
-    sum_threshold = 1200
+    sum_threshold = 1000
     max_size = 9
 
     def decide(self, reds):

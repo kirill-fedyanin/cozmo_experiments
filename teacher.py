@@ -10,7 +10,7 @@ import numpy as np
 
 class Teacher:
     def __init__(self):
-        self.datafile = open("action_data.txt", "r")
+        self.datafile = open("data/action_data.txt", "r")
 
     def _prepare_target(self, target):
         return [self._flat(int(num)) for num in target]
@@ -46,7 +46,7 @@ class Teacher:
         connections = [
             layers.Input(100),
             layers.Linear(200),
-            layers.Sigmoid(50),
+            layers.Sigmoid(150),
             layers.Sigmoid(5),
         ]
         # connections = [
@@ -71,7 +71,7 @@ class Teacher:
         error = rmsle(y_test, y_predict)
         print(error)
 
-        with open('net.pickle', 'wb') as f:
+        with open('lib/net/base_searcher.pickle', 'wb') as f:
             pickle.dump(cgnet, f)
 
 

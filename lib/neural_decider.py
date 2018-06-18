@@ -4,7 +4,7 @@ import numpy as np
 
 class NeuralDecider:
     def __init__(self):
-        with open('net.pickle', 'rb') as f:
+        with open('lib/net/base_searcher.pickle', 'rb') as f:
             self.cgnet = pickle.load(f)
 
     def decide(self, reds):

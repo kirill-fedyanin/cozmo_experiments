@@ -71,8 +71,8 @@ def cozmo_program(robot: cozmo.robot.Robot):
     # imager = Imager(robot)
     # print(imager.get_red_array())
 
-    # generate_training = False
-    generate_training = True
+    generate_training = False
+    # generate_training = True
 
     if generate_training:
         decider = AlgoDecider()
