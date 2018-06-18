@@ -22,7 +22,9 @@ class Runner:
         # action = self.decider.decide(reds)
         while True:
             reds = self.imager.get_red_array()
+            print(reds)
             action = self.decider.decide(reds)
+            print(action)
             self.logger.log(reds, action)
             if action == 0:
                 self._finish()
@@ -58,8 +60,6 @@ class Logger:
         self.file = open(filename, "a")
 
     def log(self, input_, output_):
-        print(input_)
-        print(output_)
         input_ = np.resize(input_, (1, 100))
         self.file.write(' '.join(str(el) for el in input_[0]))
         self.file.write("\n")
@@ -68,6 +68,9 @@ class Logger:
 
 
 def cozmo_program(robot: cozmo.robot.Robot):
+    # imager = Imager(robot)
+    # print(imager.get_red_array())
+
     # generate_training = False
     generate_training = True
 

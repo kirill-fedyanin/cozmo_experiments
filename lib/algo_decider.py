@@ -3,22 +3,22 @@ from copy import deepcopy
 
 
 class AlgoDecider:
-    threshold = 95
-    sum_threshold = 1350
+    threshold = 80
+    sum_threshold = 1200
     max_size = 9
 
     def decide(self, reds):
         reds = self._extend_points(reds)
         print(reds)
         print("Max value", np.amax(reds))
+        columns = reds.sum(axis=0)
+        max_column = np.argmax(columns)
+        print("Max column", max_column)
+        print("Max column value", np.amax(columns))
+
         if np.amax(reds) < self.threshold:
             return 1
         else:
-            columns = reds.sum(axis=0)
-            max_column = np.argmax(columns)
-            print("Max column", max_column)
-            print("Max column value", np.amax(columns))
-
             if np.amax(columns) > self.sum_threshold:
                 return 0
             elif max_column < 3:
@@ -35,9 +35,7 @@ class AlgoDecider:
             j = index[1]
             extended[i, j] = (2 * element
                               + reds[self._bound(i - 1), j]
-                              + reds[self._bound(i + 1), j]
-                              + reds[i, self._bound(j - 1)]
-                              + reds[i, self._bound(j + 1)]) // 6
+                              + reds[self._bound(i + 1), j]) // 4
 
         return extended
 
