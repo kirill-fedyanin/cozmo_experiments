@@ -3,7 +3,7 @@ from copy import deepcopy
 
 
 class AlgoDecider:
-    threshold = 120
+    threshold = 95
     sum_threshold = 1350
     max_size = 9
 

@@ -8,7 +8,8 @@ from lib.imager import Imager
 
 
 class Runner:
-    degrees = 5
+    degrees = 3
+    distance = 30
 
     def __init__(self, robot, decider, logger):
         self.decider = decider
@@ -38,7 +39,7 @@ class Runner:
                 raise RuntimeError("Unknow action")
 
     def _forward(self):
-        self.robot.drive_straight(distance_mm(30), speed_mmps(150), should_play_anim=False)\
+        self.robot.drive_straight(distance_mm(self.distance), speed_mmps(150), should_play_anim=False)\
             .wait_for_completed()
 
     def _left(self):
@@ -67,18 +68,18 @@ class Logger:
 
 
 def cozmo_program(robot: cozmo.robot.Robot):
-    imager = Imager(robot)
-    print(imager.get_red_array())
     # generate_training = False
-    # # generate_training = True
-    # if generate_training:
-    #     decider = AlgoDecider()
-    #     logger = Logger("action_data.txt")
-    # else:
-    #     decider = NeuralDecider()
-    #     logger = Logger("neuro_log.txt")
-    # runner = Runner(robot, decider, logger)
-    # runner.guide()
+    generate_training = True
+
+    if generate_training:
+        decider = AlgoDecider()
+        logger = Logger("data/action_data.txt")
+    else:
+        decider = NeuralDecider()
+        logger = Logger("data/neuro_log.txt")
+    runner = Runner(robot, decider, logger)
+
+    runner.guide()
 
 
 cozmo.run_program(cozmo_program)
