@@ -49,11 +49,6 @@ class Teacher:
             layers.Sigmoid(150),
             layers.Sigmoid(5),
         ]
-        # connections = [
-        #     layers.Input(100),
-        #     layers.Linear(200),
-        #     layers.Sigmoid(5),
-        # ]
 
         cgnet = algorithms.ConjugateGradient(
             connection=connections,
@@ -62,7 +57,6 @@ class Teacher:
             verbose=True,
             addons=[algorithms.LinearSearch],
         )
-
 
         cgnet.train(x_train, y_train, x_test, y_test, epochs=100)
         plots.error_plot(cgnet)

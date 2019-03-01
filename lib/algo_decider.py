@@ -10,11 +10,8 @@ class AlgoDecider:
     def decide(self, reds):
         reds = self._extend_points(reds)
         print(reds)
-        print("Max value", np.amax(reds))
         columns = reds.sum(axis=0)
         max_column = np.argmax(columns)
-        print("Max column", max_column)
-        print("Max column value", np.amax(columns))
 
         if np.amax(reds) < self.threshold:
             return 1

@@ -19,7 +19,6 @@ class Imager:
         raw = self.robot.world.latest_image.raw_image
         pixels = list(raw.getdata())
         new_pixels = []
-        # self.show(raw)
 
         # left red only
         for pixel in pixels:
@@ -34,7 +33,6 @@ class Imager:
 
     def get_red_array(self):
         red = self.get_red()
-        # self.show(red.resize((320, 240)))
         pixels = list(red.getdata())
         reds = [pixel[0] for pixel in pixels]
         reds = np.resize(np.array(reds), (10, 10))

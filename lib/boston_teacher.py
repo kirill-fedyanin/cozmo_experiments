@@ -25,29 +25,6 @@ class Teacher:
         x_train, x_test, y_train, y_test = train_test_split(
             data, target, train_size=0.85
         )
-        print(x_train[0])
-        print(type(x_train))
-
-        # cgnet = algorithms.ConjugateGradient(
-        #     connection=[
-        #         layers.Input(13),
-        #         layers.Sigmoid(50),
-        #         layers.Sigmoid(1),
-        #     ],
-        #     search_method='golden',
-        #     show_epoch=25,
-        #     verbose=True,
-        #     addons=[algorithms.LinearSearch],
-        # )
-        #
-        # cgnet.train(x_train, y_train, x_test, y_test, epochs=100)
-        # plots.error_plot(cgnet)
-        #
-        # y_predict = cgnet.predict(x_test).round(1)
-        # error = rmsle(target_scaler.inverse_transform(y_test),
-        #               target_scaler.inverse_transform(y_predict))
-        # print(error)
-
 
 if __name__ == '__main__':
     Teacher().go()

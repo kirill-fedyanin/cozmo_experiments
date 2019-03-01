@@ -18,27 +18,12 @@ class Runner:
         self.logger = logger
 
     def guide(self):
-        # reds = self.imager.get_red_array()
-        # action = self.decider.decide(reds)
+        actions = ['_finish', '_right', '_left', '_right', '_forward']
         while True:
             reds = self.imager.get_red_array()
-            print(reds)
             action = self.decider.decide(reds)
-            print(action)
             self.logger.log(reds, action)
-            if action == 0:
-                self._finish()
-                break
-            elif action == 1:
-                self._right()
-            elif action == 2:
-                self._left()
-            elif action == 3:
-                self._right()
-            elif action == 4:
-                self._forward()
-            else:
-                raise RuntimeError("Unknow action")
+            getattr(self, actions[action])()
 
     def _forward(self):
         self.robot.drive_straight(distance_mm(self.distance), speed_mmps(150), should_play_anim=False)\
@@ -52,7 +37,7 @@ class Runner:
 
     def _finish(self):
         self.robot.turn_in_place(degrees(180)).wait_for_completed()
-        # self.robot.say_text("Based!").wait_for_completed()
+        self.robot.say_text("Based!").wait_for_completed()
 
 
 class Logger:
@@ -68,11 +53,7 @@ class Logger:
 
 
 def cozmo_program(robot: cozmo.robot.Robot):
-    # imager = Imager(robot)
-    # print(imager.get_red_array())
-
     generate_training = False
-    # generate_training = True
 
     if generate_training:
         decider = AlgoDecider()
